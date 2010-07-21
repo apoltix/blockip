@@ -25,20 +25,16 @@ def main(argv):
 				opts = [("-h","")]
 
 		for opt, arg in opts:
-			# print opt + ", " + arg
 			if opt in ("-h", "--help"):
 				help()
 			elif opt in ("-v", "--version"):
 				print version()
 			elif opt in ("-a", "--add"):
-				print "Add " + str(arg)
-				#subprocess.call(["iptables", "-A", "INPUT", "-s", arg, "-j", "DROP"])
+				subprocess.call(["iptables", "-A", "INPUT", "-s", arg, "-j", "DROP"])
 			elif opt in ("-d", "--delete"):
-				pass
-				#subprocess.call(["iptables", "-D", "INPUT", "-s", arg, "-j", "DROP"])
+				subprocess.call(["iptables", "-D", "INPUT", "-s", arg, "-j", "DROP"])
 			elif opt in ("-l", "--list"):
-				pass
-				#subprocess.call(["iptables", "-L", "-n"])
+				subprocess.call(["iptables", "-L", "-n"])
 	except getopt.GetoptError, err:
 		print "Error: " + str(err)
 		sys.exit(2)
