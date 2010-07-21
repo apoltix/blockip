@@ -4,3 +4,23 @@ blockip 0.1
 Licensed under the MIT License (see LICENSE).
 
 Python script for a quick and easy-to-remember way to add and delete IP-addresses to the iptables INPUT DROP list.
+
+This utility requires superuser privileges (or rather, iptables does).
+
+Usage: blockip [ips|-h|-a ip|-d ip|-l]
+
+-h, --help:
+	Displays this message.
+ips:
+	Adds IP-addresses to the block list. Example:
+		blockip 1.2.3.4 2.3.4.5
+-a ip, --add ip:
+	Adds an IP-address to the block list. Example:
+		blockip -a 1.2.3.4
+-d ip, --delete ip:
+	Removes an IP-address from the block list. Example:
+		blockip -d 1.2.3.4
+-l, --list:
+	Lists the blocked IP-addresses.
+-v, --version:
+	Displays the version of the utility."
