@@ -1,0 +1,6 @@
+blockip 0.1
+
+(C) Christian Rasmussen, apoltix, 2010.
+Licensed under the MIT License (see LICENSE).
+
+Python script for a quick and easy-to-remember way to add and delete IP-addresses to the iptables INPUT DROP list.
