@@ -7,6 +7,8 @@ Python script for a quick and easy-to-remember way to add and delete IP-addresse
 
 This utility requires superuser privileges (or rather, iptables does).
 
+Tested working on Ubuntu 10.04 Lucid Lynx. Should work on all OSes with iptables installed.
+
 Usage: blockip [ips|-h|-a ip|-d ip|-l]
 
 -h, --help:

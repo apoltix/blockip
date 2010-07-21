@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# -*- author: Christian Rasmussen -*-
+# -*- github: http://github.com/apoltix/blockip -*-
+# -*- license: MIT License -*-
 
 # blockip: easy-to-use command to add or delete an IP-address to the blocklist in iptables
 
@@ -13,7 +16,7 @@ _version = "0.1"
 def main(argv):
 	try:
 		opts, args = getopt.getopt(argv, "ha:d:lv", ["help", "add=", "delete=", "list", "version"])
-
+		
 		if len(opts) == 0:
 			# Adding without -a or --add: iptables 1.2.3.4 2.3.4.5
 			if len(args) > 0:
@@ -23,7 +26,7 @@ def main(argv):
 			# Display help if no args exist
 			else:
 				opts = [("-h","")]
-
+		
 		for opt, arg in opts:
 			if opt in ("-h", "--help"):
 				help()
@@ -36,7 +39,10 @@ def main(argv):
 			elif opt in ("-l", "--list"):
 				subprocess.call(["iptables", "-L", "-n"])
 	except getopt.GetoptError, err:
-		print "Error: " + str(err)
+		print "blockip error: " + str(err)
+		sys.exit(2)
+	except:
+		print "blockip error (unknown)."
 		sys.exit(2)
 
 def version():
